@@ -1,0 +1,32 @@
+﻿@using web.Models
+@model List<Giohang>
+@{
+    ViewBag.Title = "ThemGiohang";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Thông tin gio hang</h2>
+<table>
+    <td>Mã sách</td>
+    <td>Tên sách</td>
+    <td>Mã sách</td>
+    <td>Mã sách</td>
+    <td>Mã sách</td>
+    <td>Mã sách</td>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.iSanP</td>
+            <td><img src="~/images/@item.sAnh" /></td>
+            <td>@item.iSoluong</td>
+            <td>@String.Format("0:0,0", item.dDonggia)</td>
+            <td>@String.Format("0:0,0", item.dThanhtien)</td>
+        </tr>
+    }
+    <tr>
+        <td colspan="3"> so luong đồng hồ:@ViewBag.Tongsoluong</td>
+        <td colspan="3"> TongTien:@String.Format("{0:0,0}", ViewBag.TongTien) VND</td>
+    </tr>
+</table>
+

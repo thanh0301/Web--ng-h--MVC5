@@ -1,0 +1,78 @@
+﻿@model web.Models.SanPham
+
+@{
+    ViewBag.Title = "chitietdh";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="text-align:center ; font-size:30px ; font-weight:600">CHI TIẾT ĐỒNG HỒ</h2>
+
+<div>
+   
+    <hr />
+    <div class="container">
+        <dl style="font-size:25px" class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.TenSP)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TenSP)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.MoTa)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MoTa)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.GioiTinh)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.GioiTinh)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.GiaBan)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.GiaBan)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.GiaNhap)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.GiaNhap)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Anh)
+            </dt>
+
+            <dd>
+                <img width="120px" src=@Url.Content("~/images/" + Model.Anh) />
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.MaLoaiSP)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MaLoaiSP)
+            </dd>
+
+        </dl>
+    </div>
+    
+</div>
+<p style="text-align:center ; font-size:20px">
+    @Html.ActionLink("Edit", "suadh", new { id = Model.MaSP }) |
+    @Html.ActionLink("Back to List", "DH")
+</p>

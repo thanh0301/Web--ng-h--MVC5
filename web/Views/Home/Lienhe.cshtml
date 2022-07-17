@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "Lienhe";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .lienhe {
+        background: linear-gradient(217deg, rgb(77 162 162),
+                                            rgb(23 83 117) 70.71%), 
+                    linear-gradient(127deg, rgb(133 80 155 / 0.80),
+                                            rgb(111 38 149 / 0.00) 70.71%),
+                    linear-gradient(336deg, rgba(0,0,255,.8),
+                                            rgba(0,0,255,0) 70.71%);
+    }
+    
+</style>
+<div id="lienhe" class="lienhe" >
+    <div class="container">
+        <h2 style="text-align:center ; font-size:40px ; font-weight:500">Liên hệ</h2>
+        
+            <table style=" margin-left: 400px;">
+                @using (Html.BeginForm())
+                {
+                    @Html.ValidationSummary(true)
+                    <tr >
+                        <td style="font-weight:400 ; font-size:20px "> Tiêu đề</td>
+                        <td style="padding-bottom: 10px">
+                            @Html.TextBox("Tieude")
+                            @ViewData["loi1"]
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="font-weight:400 ; font-size:20px"> Nội dung</td>
+                        <td style="padding-bottom: 10px">
+                            @Html.TextBox("Noidung")
+                            @ViewData["loi2"]
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <input class="btn btn-success" type="Submit" value="Liên hệ" />
+                        </td>
+                    </tr>
+                }
+            </table>
+        
+        
+    </div>
+
+    <div style="text-align:center ; margin: 30px auto" class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.1250520430317!2d106.71229765041329!3d10.80173316164192!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528a500e8c3d5%3A0xedfca63e47b5afb8!2zNDc1YSDEkGnhu4duIEJpw6puIFBo4bunLCBQaMaw4budbmcgMjUsIELDrG5oIFRo4bqhbmgsIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaCA3MDAwMCwgVmlldG5hbQ!5e0!3m2!1sfr!2s!4v1647080593091!5m2!1sfr!2s" width="1005" height="400"></iframe>
+    </div>
+
+</div>
+
+

@@ -1,0 +1,22 @@
+﻿@model IEnumerable<web.Models.SanPham>
+@{
+    ViewBag.Title = "LayDHNam3";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>LayDHNam3</h2>
+@foreach (var DHNu2 in Model)
+{
+    <li style="list-style-type:none">
+        <a href="@Url.Action("Dedails", " DHNu2", new { id =  DHNu2.LoaiSanPham })">
+            <img src="~/images/@DHNu2.Anh" />
+        </a>
+        <span class="ul__dh__fon">@DHNu2.TenSP</span>
+        <div>
+            <button> Đặt mua</button>
+        </div>
+    </li>
+
+
+}
+

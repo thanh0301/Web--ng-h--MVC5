@@ -1,0 +1,45 @@
+﻿@using web.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<SanPham>
+@{
+    ViewBag.Title = "DHNu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="~/wow/css/libs/animate.css">
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+<div class="fondhn" style="margin: 50px auto">
+    <h2 class="wow animate__animated animate__bounce animate__rubberBand" style="font-size: 50px; color: hsl(334 67% 37%); font-weight:800">Đồng Hồ Nữ</h2>
+</div>
+
+<div class="container">
+
+    <ul class="ul__dh">
+        @foreach (var DHNu in Model)
+        {
+            <li style="list-style-type:none">
+                <a href="@Url.Action("CTSPN", "Home", new { id = DHNu.MaSP })">
+                    <img src="~/images/@DHNu.Anh" />
+                </a>
+                <span class="ul__dh__fon">@DHNu.TenSP</span>
+
+            </li>
+
+        }
+    </ul>
+
+</div>
+
+Trang @(Model.PageCount<Model.PageNumber ?0:Model.PageNumber)/@Model.PageCount;
+
+<div class="MenuTrang">
+    @Html.PagedListPager(Model, page => Url.Action("DHNu", new { page = page }))
+</div>
+<style>
+    .MenuTrang {
+        display: inline;
+    }
+</style>
+

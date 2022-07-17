@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewBag.Title = "Dangky";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container" style="background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c); margin : 10px auto;">
+<h2 style="text-align:center; font-size: 30px; font-weight:600">Đăng ký thành viên</h2>
+    
+    <table style="margin-left: 400px;">
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary(true)
+            <tr style="height:40px">
+                <td> Họ Tên khách hành</td>
+                <td>
+                    @Html.TextBox("HotenKh")
+                    @ViewData["loi1"]
+                </td>
+            </tr>
+            <tr style="height:40px">
+                <td> Tên đăng Nhập</td>
+                <td>
+                    @Html.TextBox("TenDN")
+                    @ViewData["loi2"]
+                </td>
+            </tr>
+            <tr style="height:40px">
+                <td> Mật Khẩu</td>
+                <td>
+                    @Html.Password("MatKhau")
+                    @ViewData["loi3"]
+                </td>
+            </tr>
+            <tr style="height:40px">
+                <td> Nhập Lại Mật Khẩu</td>
+                <td>
+                    @Html.Password("MatKhaunhaplai")
+                    @ViewData["loi4"]
+                </td>
+            <tr style="height:40px">
+                <td>Email</td>
+                <td>
+                    @Html.TextBox("Email")
+                    @ViewData["loi5"]
+                </td>
+            </tr>
+            </tr>
+            <tr style="height:40px">
+                <td> Điện Thoại</td>
+                <td>
+                    @Html.TextBox("Dienthoai")
+                    @ViewData["loi6"]
+                </td>
+            </tr>
+            <tr style="height:40px">
+                <td> Địa chỉ</td>
+                <td>
+                    @Html.TextBox("Diachi")
+                    @ViewData["loi7"]
+                </td>
+            </tr>
+
+            <tr style="height:40px">
+
+                <td>
+                    <input class="btn btn-danger" type="Submit" value="Đăng Ký" />
+                </td>
+            </tr>
+        }
+    </table>
+</div>

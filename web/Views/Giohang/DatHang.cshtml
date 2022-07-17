@@ -1,0 +1,128 @@
+﻿@using web.Models
+@model List<Giohang>
+@{
+    ViewBag.Title = "DatHang";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="text-align:center ; font-size:40px; font-weight:600">Thông tin đặt hàng</h2>
+<table align="center" border="1" style="margin:30px 600px">
+
+    <tr style="text-align:center;font-weight:bold">
+        <td>Mã sản phẩm</td>
+        <td>Tên sản phẩm</td>
+        <td>Ảnh bìa</td>
+        <td>Số lượng</td>
+        <td>Đơn Giá </td>
+        <td>Thành tiền</td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr style="text-align:center;font-weight:bold">
+            <td>@item.iSanP</td>
+            <td>@item.sTenSanPham</td>
+            <td><img width="200px" src="~/images/@item.sAnh" /></td>
+            @using (Html.BeginForm("CapnhatGiohang", "Giohang", new { @iMaSp = item.iSanP }))
+            {
+                <td>
+                    @item.iSoluong
+                </td>
+                <td>@String.Format("{0:0,0}", item.dDongia)</td>
+                <td>@String.Format("{0:0,0}", item.dThanhtien)</td>
+            }
+        </tr>
+    }
+    <tr style="font-weight:bold;text-align:right;color:red">
+        <td colspan="3"> Số lượng:@ViewBag.Tongsoluong</td>
+        <td colspan="3"> Tổng tiền:@String.Format("{0:0,0}", ViewBag.Tongtien) VND</td>
+
+    </tr>
+    <tr style="font-weight:bold;text-align:right" ">
+        <td colspan="6">
+            @Html.ActionLink("Trở về giỏ hang", "Giohang", "Giohang");
+        </td>
+    </tr>
+</table>
+
+<h2 style="text-align:center ; font-size:40px; font-weight:600">Thông tin đặt hàng</h2>
+
+@{
+    KhachHang kh = (KhachHang)Session["Taikhoan"];
+}
+<table style="margin:30px 700px ; text-align:center" align="center" >
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+        <tr style="height:40px">
+            <td>Họ tên khách hàng :</td>
+            <td style="font-weight">@kh.TenKH</td>
+        </tr>
+        <tr style="height:40px">
+            <td>Địa chỉ khách hàng :</td>
+            <td style="font-weight">@kh.DiaChi</td>
+        </tr>
+        <tr style="height:40px">
+            <td>Số điện thoại : </td>
+            <td style="font-weight">@kh.SDT</td>
+        </tr>
+        <tr style="height:40px">
+            <td>Ngày đặt :</td>
+             <td style="font-weight">@DateTime.Now.ToShortDateString()</td>
+        </tr>
+        <tr>
+            <td>Ngày giao:</td>
+            <td>
+                <input tyte="date" name="Ngày giao" />
+            </td>
+        </tr>
+        <tr>
+           
+                <td> <input target="_blank" type="submit" value="Đồng ý đặt hàng" /></td>
+
+
+        </tr>
+    }
+
+</table>
+
+
+<script src="https://www.paypal.com/sdk/js?client-id=AeeWvUqvUEMLI5HHqmhtdLM2W5T2Q0PgDITH-_clhBLuze-dAXL59PdDL8lS79kDyPXaaeSD8rIhWbOh"></script>
+
+<!-- Set up a container element for the button -->
+<div id="paypal-button-container" style="margin: 30px 700px"></div>
+
+<script>
+      paypal.Buttons({
+
+        // Sets up the transaction when a payment button is clicked
+        createOrder: function(data, actions) {
+          return actions.order.create({
+            purchase_units: [{
+                amount: {
+                    value:@ViewBag.Tongtien // Can reference variables or functions. Example: value: document.getElementById('...').value
+              }
+            }]
+          });
+        },
+
+        // Finalize the transaction after payer approval
+        onApprove: function(data, actions) {
+          return actions.order.capture().then(function(orderData) {
+            // Successful capture! For dev/demo purposes:
+                console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+                var transaction = orderData.purchase_units[0].payments.captures[0];
+                alert('Transaction '+ transaction.status + ': ' + transaction.id + '\n\nSee console for all available details');
+
+            // When ready to go live, remove the alert and show a success message within this page. For example:
+            // var element = document.getElementById('paypal-button-container');
+            // element.innerHTML = '';
+            // element.innerHTML = '<h3>Thank you for your payment!</h3>';
+            // Or go to another URL:  actions.redirect('thank_you.html');
+          });
+        }
+      }).render('#paypal-button-container');
+
+</script>
+
+
+

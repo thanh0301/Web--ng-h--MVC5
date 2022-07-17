@@ -1,0 +1,108 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<html>
+
+<style>
+    .form-top-left {
+        font-size: 30px;
+        font-weight : 400;
+        
+        text-align: center;
+    }
+
+    .form-bottom {
+        text-align: center;
+    }
+
+    .form-group {
+        padding: 10px 10px;
+    }
+
+    .btn {
+        padding: 10px 15px;
+        font-size : 20px;
+        background-color: green;
+    }
+
+    .form-control{
+        width:300px;
+        height : 40px;
+    }
+</style>
+
+<style type="text/css">
+    .container {
+        width: 90%;
+        height: 700px;
+        margin: auto;
+        text-align: center;
+    }
+
+    #charging {
+        padding-top: 20px;
+        font-size: 100px;
+    }
+</style>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+</head>
+<body style="background-image: linear-gradient(180deg, pink, black)">
+    <div class="form-top-left">
+        <h3> ĐĂNG NHẬP VÀO HỆ THỐNG</h3>
+        <p> Vui lòng nhập đầy đủ thông tin !!!</p>
+        <h3>@ViewBag.Thongbao</h3>
+    </div>
+    <div class="form-bottom">
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary(true)
+            <div class="form-group">
+                <label class="sr-only" for="form-username">Username:</label>
+                <input type="text" name="username" placeholder="Username..." class="form-username form-control" id="username" />
+                @ViewData["Loi1"]
+            </div>
+            <div class="form-group">
+                <label class="sr-only" for="form-username">Password:</label>
+                <input type="password" name="password" placeholder="Password" class="form-password form-control" id="username" />
+                @ViewData["Loi2"]
+            </div>
+            <button type="submit" class="btn">Đăng Nhập</button>
+
+
+            <div class="container">
+
+                <div id="charging" class="fa">&#xf240;</div>
+            </div>
+        }
+    </div>
+</body>
+
+<script>
+    function chargebattery() {
+        var a;
+        a = document.getElementById("charging");
+        a.innerHTML = "&#xf244;";
+        setTimeout(function () {
+            a.innerHTML = "&#xf243;";
+        }, 1000);
+        setTimeout(function () {
+            a.innerHTML = "&#xf242;";
+        }, 2000);
+        setTimeout(function () {
+            a.innerHTML = "&#xf241;";
+        }, 3000);
+        setTimeout(function () {
+            a.innerHTML = "&#xf240;";
+        }, 4000);
+    }
+    chargebattery();
+    setInterval(chargebattery, 5000);
+</script>
+</html>

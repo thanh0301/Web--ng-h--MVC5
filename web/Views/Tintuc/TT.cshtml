@@ -1,0 +1,46 @@
+﻿@model IEnumerable<web.Models.TinTuc>
+@{
+    ViewBag.Title = "TT";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .List_tintuc {
+        margin-left: -73px;
+    }
+
+    .list {
+        display: flex;
+    }
+
+        .list li {
+            padding-left: 20px;
+            box-sizing: border-box;
+        }
+</style>
+
+<link rel="stylesheet" href="~/wow/css/libs/animate.css">
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+<div class="fondhn" style="margin: 50px auto">
+    <h2 class="wow animate__animated animate__bounce animate__rubberBand" style="font-size: 50px; color: hsl(334 67% 37%); font-weight:800">Tin Tức</h2>
+</div>
+
+<div class="container">
+    <ul class="List_tintuc">
+        <div class="list">
+            @foreach (var TT in Model)
+            {
+            <li style="list-style-type:none">
+                <a style="color : black ; font-size : 20px" href="@Url.Action("CTTT", "Tintuc", new { id = TT.MaTT })">
+
+                    <p>@TT.Tieude</p>
+                    <img style="width : 400px" src="~/images/@TT.picture" />
+                </a>
+                <span style="font-size : 20px ; padding-top : 15px" class="ul__dh__fon">@TT.NoiDung</span>
+
+            </li>
+        }
+    </div>
+    </ul>
+

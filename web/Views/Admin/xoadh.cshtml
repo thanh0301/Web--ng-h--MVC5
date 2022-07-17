@@ -1,0 +1,98 @@
+﻿@model web.Models.SanPham
+
+@{
+    ViewBag.Title = "xoadh";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<style>
+    .title__del h2{
+        text-align:center;
+        font-size:50px;
+        font-weight:500;
+    }
+    .dl-horizontal {
+        font-size:20px;
+        padding-bottom:20px;
+    }
+   
+</style>
+<div class="title__del">
+    <h2>Thông tin đồng hồ cần xóa</h2>
+</div>
+
+
+<div>
+    <hr />
+    <div class="container">
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.TenSP)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TenSP)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.MoTa)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MoTa)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.GioiTinh)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.GioiTinh)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.GiaBan)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.GiaBan)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.GiaNhap)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.GiaNhap)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Anh)
+            </dt>
+
+            <dd>
+                <img width="120px" src=@Url.Content("~/images/" + Model.Anh) />
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.MaLoaiSP)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MaLoaiSP)
+            </dd>
+
+        </dl>
+    </div>
+    
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div style="text-align:center ; font-size:25px ; font-weight:300;" class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "DH")
+        </div>
+    }
+</div>

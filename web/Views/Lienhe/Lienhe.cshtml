@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "Lienhe";
+    Layout = "~/Views/Shared/_Lienhe.cshtml";
+}
+<style>
+    .lienhe {
+        background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
+        
+    }
+</style>
+<div id="lienhe" class="lienhe">
+    <h2>Đăng ký thành viên</h2>
+    <table >
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary(true)
+            <tr style="height:40px">
+                <td> Tiêu đề</td>
+                <td>
+                    @Html.TextBox("Tieude")
+                    @ViewData["loi1"]
+                </td>
+            </tr>
+            <tr style="height:40px">
+                <td> Nội dung</td>
+                <td>
+                    @Html.TextBox("Noidung")
+                    @ViewData["loi2"]
+                </td>
+            </tr>
+            <tr style="height:40px">
+
+                <td>
+                    <input class="btn btn-success" type="Submit" value="Liên hệ" />
+                </td>
+            </tr>
+        }
+    </table>
+ 
+
+</div>

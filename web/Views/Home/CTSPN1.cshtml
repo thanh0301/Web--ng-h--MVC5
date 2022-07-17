@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "CTSPN1";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="fondhn">
+    <h2>Chi tiết sản Phẩm</h2>
+</div>
+
+
+<div class="container">
+
+    <div class="content__item" style="display:flex ; padding: 40px 40px">
+        <div style="border:1px solid black">
+            <img width="200px" src="~/images/@Model.Anh" />
+        </div>
+        <div class="post" style="padding-left:50px">
+            <h4>@Model.TenSP</h4>
+            <p>Mô tả:@Model.MoTa</p>
+            <h4>Giá bán:@Model.GiaBan VND</h4>
+            <div class="btn" style="border:1px ; padding: 10px 30px ; background-color:gainsboro">
+                <a href="@Url.Action("ThemGiohang","Giohang", new { @iSanP= @Model.MaSP , @strURL=Request.Url.ToString() })"> Đặt mua</a>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+

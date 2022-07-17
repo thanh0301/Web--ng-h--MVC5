@@ -1,0 +1,37 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    text-decoration: none
+}
+
+.root {
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+ 
+    z-index: 999;
+    left: 50px;
+    background-color: black;
+    transform: translateX(96px);
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+    header a {
+        margin-right: 20px;
+        color: white;
+    }
+
+    header li:hover a {
+        color: orchid
+    }
+
+.dn{
+
+}

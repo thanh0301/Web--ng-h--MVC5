@@ -1,0 +1,324 @@
+﻿
+@{
+    ViewBag.Title = "Trangchu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+<link rel="stylesheet" href="~/wow/css/libs/animate.css">
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+<style>
+    .List {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 200px 200px;
+        gap: 30px;
+    }
+
+    #about {
+
+        margin: 10px 0;
+        background-image: linear-gradient(rgb(184 169 169 / 0.90), rgb(204 116 53)), url("../../media/examples/lizard.png");
+    }
+
+    .about h1 {
+        text-align: center;
+    }
+
+    .list .top, .bot {
+        display: flex;
+        padding-left: 150px;
+    }
+
+    .list img {
+        width: 250px;
+        padding: 10px 30px;
+        box-sizing: border-box;
+    }
+
+    .list__item {
+        padding-top: 30px;
+    }
+
+    .list .list__item:hover {
+        transition: all 0.5s;
+        transform: translateY(-30px);
+        transform: scale(1.1);
+        transition: all 0.5s;
+    }
+
+    .title__thang4:hover {
+        color: red;
+        transition: all 0.5s;
+        transform: translateX(10px);
+    }
+
+    .List .item {
+        padding-right: 15px;
+        text-align: center;
+        border: 1px solid black;
+    }
+
+        .List .item:hover {
+            transform: translateY(-20px);
+            transition: all 0.5s;
+            transform: scale(1.1);
+            transition: all 0.5s;
+        }
+
+    #giaodich {
+        margin: 30px 0;
+        background-color: rgba(0, 0, 0, 0.9);
+        height: 400px;
+    }
+
+    .giaodich h1 {
+        padding-top: 20px;
+        text-align: center;
+        color: white;
+    }
+
+    .row {
+        padding: 50px 0;
+    }
+
+    .col-sm-3 {
+        color: white;
+        padding: 20px 20px;
+        text-align: center;
+    }
+
+        .col-sm-3:hover {
+            color: brown;
+        }
+
+        .col-sm-3 i {
+            color: chocolate;
+            font-size: 50px;
+            padding-bottom: 20px;
+        }
+
+    .fondhn {
+        background-image: linear-gradient(rgb(117 117 152 / 0.50), rgb(212 232 212 / 0.50)), url("../../media/examples/lizard.png");
+    }
+
+    .trangchu .item img:hover {
+        transform: scale(1.1);
+        transition: all 0.5s;
+    }
+
+    .counter {
+        color : hsl(24 92% 46%);
+        font-size:60px;
+        font-weight:700;
+    }
+    .text-center {
+        @*background-color:black;*@
+    }
+
+    .w3-stats h1{
+        padding-left:170px;
+        font-weight:700;
+        font-size:50px;
+    }
+</style>
+
+<section id="trangchu" class="trangchu" style=" margin-top: 50px; width: 80%; box-sizing: border-box;">
+
+    <div class="main" style=" display: flex; padding: 20px 20px;">
+        <div class="left " style="padding-right: 20px;">
+            <div class="item">
+                <a href="https://localhost:44380/Home/Trangchu">
+                    <img style="width: 850px; height: 416px;" src="~/images/BANCHAY.PNG" />
+                </a>
+
+            </div>
+
+        </div>
+        <div class="right" style="padding-bottom: 20px;">
+            <div class="top" style=" padding-bottom: 20px;">
+                <div class="item">
+                    <a href="https://localhost:44380/Home/DHNu">
+                        <img src="~/images/DHNU.PNG" />
+                    </a>
+
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="item">
+                    <a href="https://localhost:44380/Home/DHNam">
+                        <img src="~/images/DHNAM.PNG" />
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section id="stats" style=">
+        <div class="container py-md-5 py-4">
+            <div class="container py-md-5 py-4">
+                <div class="w3-stats">
+                    <h1>SỐ LƯỢNG SẢN PHẨM ĐƯỢC BÁN CỦA CÁC THƯƠNG HIỆU</h1>
+                    <div class="row text-center">
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="counter">
+                                <span class="counter__number">36,000</span>
+                                <p>CASIO</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="counter">
+                                <span class="counter__number">15,000</span>
+                                <p>SEIKO</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="counter">
+                                <span class="counter__number">5,000</span>
+                                <p>DOXA</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="counter" style="border: none;">
+                                <span class="counter__number">1,000</span>
+                                <p>KHÁC</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+    </section>
+
+
+<div class="fondhn">
+    <h2 class="wow animate__animated animate__bounce animate__tada" style="font-size: 50px; font-weight: 700; color: hsl(24 83% 50%)">BST ĐỒNG HỒ THÁNG 4</h2>
+</div>
+<div class="lisst" style="padding: 20px 20px">
+    <ul class="List">
+
+        @foreach (var DHNam in Model)
+        {
+            <div class="item">
+            <li>
+                <a href="@Url.Action("Dedails", "DHNam", new { id = DHNam.LoaiSanPham })">
+                    <img width="150px" src="~/images/@DHNam.Anh" />
+                </a>
+                <span class="ul__dh__fon">@DHNam.TenSP</span>
+            </li>
+    </div>
+}
+        </ul>
+        </div>
+
+        <hr />
+
+        <section id="about" class="about">
+            <div class="">
+                <h1 class="wow animate__animated animate__bounce animate__tada" style="font-size: 50px; font-weight: 700; color: hsl(24 83% 50%)">Các Thương Hiệu Nổi Tiếng</h1>
+                <div class="list ">
+                    <div class="top">
+                        <div class="list__item">
+                            <a href="https://localhost:44380/Home/CASIO">
+                                <img src="~/images/thuong-hieu-casio-350x350.png" />
+                            </a>
+
+                        </div>
+                        <div class="list__item">
+                            <a href="https://localhost:44380/Home/DOXA">
+                                <img src="~/images/thuong-hieu-doxa-350x350.png" />
+                            </a>
+
+                        </div>
+                        <div class="list__item">
+                            <a href="https://localhost:44380/Home/SEIKO">
+                                <img src="~/images/thuong-hieu-seiko-350x350.png" />
+                            </a>
+
+                        </div>
+                        <div class="list__item">
+                            <img src="~/images/thuong-hieu-Claude-Bernard-350x350.png" />
+                        </div>
+                        <div class="list__item">
+                            <img src="~/images/thuong-hieu-mido-350x350.png" />
+                        </div>
+                    </div>
+                    <div class="bot">
+                        <div class="list__item">
+                            <img src="~/images/thuong-hieu-ogival-350x350.png" />
+                        </div>
+                        <div class="list__item">
+                            <img src="~/images/thuong-hieu-rotary-350x350.png" />
+                        </div>
+                        <div class="list__item">
+                            <img src="~/images/thuong-hieu-skagen-350x350.png" />
+                        </div>
+                        <div class="list__item">
+                            <img src="~/images/thuong-hieu-timex-350x350.png" />
+                        </div>
+                        <div class="list__item">
+                            <img src="~/images/thuong-hieu-rotary-350x350.png" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="giaodich" class="giaodich">
+            <div class="container">
+                <h1>Các loại dịch vụ của cửa hàng</h1>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <i class="fa fa-wrench"></i>
+                        <div class="text">
+                            <h5>KIỂM TRA</h5>
+                            <p>Đối với các sản phẩm chúng tôi cung cấp dịch vụ bảo dưỡng bao gồm lau dầu, đánh bóng.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <i class="fa fa-store"></i>
+                        <div class="text">
+                            <h5>PHỤ KIỆN ĐỒNG HỒ</h5>
+                            <p>Cửa hàng donghovietnam.com hỗ trợ khách hàng mua các loại dây, khoá, hộp quay, phụ kiện… với chất lượng chính hãng và giá tốt nhất thị trường.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <i class="fa fa-gift"></i>
+                        <div class="text">
+                            <h5>ƯU ĐÃI</h5>
+                            <p>Khi khách hàng mua sắm tại của hàng , họ sẽ được gia nhập thành viên để nhận các ưu đãi từ cửa hàng</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <i class="fa fa-shopping-cart"></i>
+                        <div class="text">
+                            <h5>HÌNH THỨC MUA SẮM</h5>
+                            <p>Với mạng lưới toàn cầu và quan hệ đối tác gần gũi với các hãng đồng hồ uy tín, chúng tôi nhận order mọi mẫu đồng hồ theo ý muốn.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <script src="~/wow/dist/wow.min.js"></script>
+        <script>
+            new WOW().init();
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+                integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+                crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"
+                integrity="sha512-ZKNVEa7gi0Dz4Rq9jXcySgcPiK+5f01CqW+ZoKLLKr9VMXuCsw3RjWiv8ZpIOa0hxO79np7Ec8DDWALM0bDOaQ=="
+                crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="~/number/jquery.countup.js"></script>
+        <script>
+            $('.counter__number').countUp();
+
+        </script>
